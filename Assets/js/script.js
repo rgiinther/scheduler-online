@@ -12,7 +12,7 @@ $(document).ready(function () {
         localStorage.setItem(time, text);
     })
 })
-//load local storage for each timeblock.
+//load data from local storage for each timeblock.
 $("#9 .info").val(localStorage.getItem("9"));
 $("#10 .info").val(localStorage.getItem("10"));
 $("#11 .info").val(localStorage.getItem("11"));
@@ -23,3 +23,30 @@ $("#15 .info").val(localStorage.getItem("15"));
 $("#16 .info").val(localStorage.getItem("16"));
 $("#17 .info").val(localStorage.getItem("17"));
 
+function scheduleTrack() {
+     //current number of hours/ use moment.js
+     var currentTime = moment().time(); 
+
+     // loop over time blocks
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("time")[1]);
+        console.log( blockTime, currentTime)
+        //check if we've moved past this time, click into css/html given classes of past, present, or future
+        if (blockTime < currentTime) {
+            $(this).addClass("past");
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+        }
+        else if (blockTime === currentTime) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+        }
+    })
+}
+scheduleTrack(); //re-run function
