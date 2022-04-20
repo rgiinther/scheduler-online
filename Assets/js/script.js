@@ -53,7 +53,7 @@ function scheduleTrack() {
 scheduleTrack(); 
 }*/
 
-
+//Fixed code is below 
 //timer 
 var currentDay = moment();
 $("#currentDay").text(currentDay.format("MMMM Do YYYY, h:mm:ss a"));
@@ -65,7 +65,7 @@ setInterval(function() {
     $("#currentDay").text(currentDay.format("MMMM Do YYYY h:mm:ss a"));
 }, 1000)
 
-//local storage lines 69 to 
+//local storage lines 69 to 139
 //9am
 $("#btn0").click(function(){
     var input9am = document.getElementById("0").value
@@ -138,9 +138,7 @@ $("#btn8").click(function(){
 var output5pm = JSON.parse(localStorage.getItem("5pm"))
 document.getElementById("8").value = output5pm;
 
-
-
-//schedule tracking lines 96 to 
+//schedule tracking lines 141 to the end
 //9am
 if (currentHour === 9) {
     $("#0").addClass("present");
@@ -153,8 +151,89 @@ else {
 }
 
 //10
+if (currentHour === 10) {
+    $("#1").addClass("present");
+}
+else if (currentHour >10) {
+    $("#1").addClass("past");
+}
+else {
+    $("#1").addClass("future");
+}
 
+//11 
+if (currentHour === 11) {
+    $("#2").addClass("present");
+}
+else if (currentHour > 11) {
+    $("#2").addClass("past")
+}
+else {
+    $("#2").addClass("future");
+}
 
+//12
+if (currentHour === 12) {
+    $("#3").addClass("present");
+}
+else if (currentHour > 12) {
+    $("#3").addClass("past")
+}
+else {
+    $("#3").addClass("future");
+}
 
+//1pm
+if (currentHour === 13) {
+    $("#4").addClass("present");
+}
+else if (currentHour > 13) {
+    $("#4").addClass("past")
+}
+else {
+    $("#4").addClass("future");
+}
 
+//2pm
+if (currentHour === 14) {
+    $("#5").addClass("present");
+}
+else if (currentHour > 14) {
+    $("#5").addClass("past")
+}
+else {
+    $("#5").addClass("future");
+}
 
+//3pm
+if (currentHour === 15) {
+    $("#6").addClass("present");
+}
+else if (currentHour > 15) {
+    $("#6").addClass("past")
+}
+else {
+    $("#6").addClass("future");
+}
+
+//4pm
+if (currentHour === 16) {
+    $("#7").addClass("present");
+}
+else if (currentHour > 16) {
+    $("#7").addClass("past")
+}
+else {
+    $("#7").addClass("future");
+}
+
+//5pm
+if (currentHour === 17) {
+    $("#8").addClass("present");
+}
+else if (currentHour > 17) {
+    $("#8").addClass("past")
+}
+else {
+    $("#8").addClass("future");
+}
