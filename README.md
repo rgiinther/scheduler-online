@@ -1,6 +1,8 @@
 # scheduler-online
 This is an online scheduler created with HTML, CSS, and Javascript/jQuery with the help of moment.js. 
 
+Button Icon found at: https://icons.getbootstrap.com
+
 Here is the link to the site: https://rgiinther.github.io/scheduler-online/
 
 This is what it looks like: 
